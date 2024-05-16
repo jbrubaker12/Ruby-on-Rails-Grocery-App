@@ -1,6 +1,8 @@
 <nav class="navbar bg-light border-bottom navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <%= link_to 'Grocery App', root_path, class:"navbar-brand nav-link" %>
+    <%= link_to(root_path, class: "navbar-brand nav-link") do %>
+      <%= image_tag("icon.png", class: "img-fluid", height: "48", width: "48") %>
+    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
