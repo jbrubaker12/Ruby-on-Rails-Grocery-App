@@ -1,0 +1,44 @@
+<footer class="bg-dark text-light py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Grocery App</h5>
+        <p class="mb-0">Your one-stop solution for all your grocery needs.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <%= link_to 'Home', root_path, class:"text-light" %>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact Us</h5>
+        <ul class="list-unstyled">
+          <li><span class="text-light">Email:</span> <a href="mailto:support@groceryapp.com" class="text-light">support@groceryapp.com</a></li>
+          <li><span class="text-light">Phone:</span> <a href="tel:+1234567890" class="text-light">+1 234 567 890</a></li>
+          <li><span class="text-light">Address:</span> 123 Grocery Lane, Food City, FC 12345</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col text-center">
+        <p class="mb-0">&copy; 2024 Grocery App. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer h5 {
+    margin-bottom: 15px;
+  }
+  footer a {
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  footer p, footer li {
+    margin-bottom: 10px;
+  }
+</style>
