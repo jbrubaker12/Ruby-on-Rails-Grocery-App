@@ -3,7 +3,7 @@ class GroceriesController < ApplicationController
 
   # GET /groceries or /groceries.json
   def index
-    @groceries = Grocery.all
+    @groceries = Grocery.order(:category, :pickup_time).group_by(&:category)
   end
 
   # GET /groceries/1 or /groceries/1.json

@@ -1,14 +1,37 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Groceries</h1>
+<h1 class="text-center">Groceries</h1>
 
 <div id="groceries">
-  <% @groceries.each do |grocery| %>
-    <%= render grocery %>
-    <p>
-      <%= link_to "Show this grocery", grocery %>
-    </p>
-  <% end %>
+  <!-- app/views/groceries/index.html.erb -->
+<% @groceries.each do |category, groceries| %>
+  <div class="category-section">
+    <h2 class="my-4"><%= category %></h2>
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Grocery Name</th>
+          <th>Quantity</th>
+          <th>Store Name</th>
+          <th>Pickup Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% groceries.each do |grocery| %>
+          <tr id="<%= dom_id(grocery) %>">
+            <td><%= grocery.grocery_name %></td>
+            <td><%= grocery.quantity %></td>
+            <td><%= grocery.store_name %></td>
+            <td><%= grocery.pickup_time %></td>
+            <td><%= link_to "Show this grocery", grocery, class: "btn btn-primary" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
 </div>
 
 <%= link_to "New grocery", new_grocery_path %>
