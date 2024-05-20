@@ -2,7 +2,7 @@
 
 <h1 class="text-center">Groceries</h1>
 
-<div id="groceries">
+<div class="container"id="groceries">
   <!-- app/views/groceries/index.html.erb -->
 <% @groceries.each do |category, groceries| %>
   <div class="category-section">
@@ -31,7 +31,7 @@
     </table>
   </div>
 <% end %>
-
+<%= link_to "New grocery", new_grocery_path %>
 </div>
 
-<%= link_to "New grocery", new_grocery_path %>
+
