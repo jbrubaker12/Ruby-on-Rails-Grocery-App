@@ -1,9 +1,27 @@
-<h1>New grocery</h1>
+<div class="d-flex justify-content-center align-items-center full-height">
+    <div class="container max-width">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+          <h1 class="mb-4">New grocery</h1>
 
-<%= render "form", grocery: @grocery %>
+          <%= render "form", grocery: @grocery %>
 
-<br>
+          <br>
 
-<div>
-  <%= link_to "Back to groceries", groceries_path %>
-</div>
+          <div>
+            <%= link_to "Back to groceries", groceries_path, class: "btn btn-dark" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .full-height {
+      height: 50vh;
+    }
+    .max-width {
+      max-width: 100%;
+      white-space: nowrap;
+    }
+  </style>
