@@ -1,27 +1,33 @@
-<div id="<%= dom_id grocery %>">
-  <p>
-    <strong>Grocery name:</strong>
-    <%= grocery.grocery_name %>
-  </p>
+<div id="<%= dom_id grocery %>" class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Grocery Details</strong></h5>
+      <hr>
+      <p class="card-text">
+        <strong>Grocery name:</strong>
+        <%= grocery.grocery_name %>
+      </p>
 
-  <p>
-    <strong>Quantity:</strong>
-    <%= grocery.quantity %>
-  </p>
+      <p class="card-text">
+        <strong>Quantity:</strong>
+        <%= grocery.quantity %>
+      </p>
 
-  <p>
-    <strong>Category:</strong>
-    <%= grocery.category %>
-  </p>
+      <p class="card-text">
+        <strong>Category:</strong>
+        <%= grocery.category %>
+      </p>
 
-  <p>
-    <strong>Store name:</strong>
-    <%= grocery.store_name %>
-  </p>
+      <p class="card-text">
+        <strong>Store name:</strong>
+        <%= grocery.store_name %>
+      </p>
 
-  <p>
-    <strong>Pickup time:</strong>
-    <%= grocery.pickup_time %>
-  </p>
-
+      <p class="card-text">
+        <strong>Pickup time:</strong>
+        <%= grocery.pickup_time %>
+      </p>
+    </div>
+  </div>
 </div>
+

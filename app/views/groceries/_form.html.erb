@@ -1,42 +1,48 @@
-<%= form_with(model: grocery) do |form| %>
-  <% if grocery.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(grocery.errors.count, "error") %> prohibited this grocery from being saved:</h2>
-
-      <ul>
-        <% grocery.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <%= form_with(model: grocery, local: true) do |form| %>
+        <% if grocery.errors.any? %>
+          <div class="alert alert-danger">
+            <h4><%= pluralize(grocery.errors.count, "error") %> prohibited this grocery from being saved:</h4>
+            <ul>
+              <% grocery.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+        <div class="mb-3">
+          <%= form.label :grocery_name, class: "form-label" %>
+          <%= form.text_field :grocery_name, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :quantity, class: "form-label" %>
+          <%= form.number_field :quantity, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :category, class: "form-label" %>
+          <%= form.text_field :category, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :store_name, class: "form-label" %>
+          <%= form.text_field :store_name, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :pickup_time, class: "form-label" %>
+          <%= form.date_field :pickup_time, class: "form-control" %>
+        </div>
+
+        <div class="mt-4">
+          <%= form.submit "Save Grocery", class: "btn btn-success" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :grocery_name, style: "display: block" %>
-    <%= form.text_field :grocery_name %>
   </div>
+</div>
 
-  <div>
-    <%= form.label :quantity, style: "display: block" %>
-    <%= form.number_field :quantity %>
-  </div>
-
-  <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= form.text_field :category %>
-  </div>
-
-  <div>
-    <%= form.label :store_name, style: "display: block" %>
-    <%= form.text_field :store_name %>
-  </div>
-
-  <div>
-    <%= form.label :pickup_time, style: "display: block" %>
-    <%= form.date_field :pickup_time %>
-  </div>
-
-  <div class="mt-4">
-    <%= form.submit class: "btn btn-success" %>
-  </div>
-<% end %>
